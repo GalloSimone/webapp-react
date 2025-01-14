@@ -13,7 +13,7 @@ export default function IndexMoviePage() {
   }, []);
 
   return(
-   
+   <>
 <div className="container">
     <h1>lista post </h1>
     
@@ -21,7 +21,10 @@ export default function IndexMoviePage() {
     {movies.map((movie)=>(
         <li key={movie.id}>
             {movie.title}
+           
+            <p>{movie.genre}</p>
 
+            <p>{movie.director}</p>
         </li>
         
         
@@ -30,6 +33,7 @@ export default function IndexMoviePage() {
     
     </div>
    
+    </>  
   )
 }
     
