@@ -12,33 +12,28 @@ export default function IndexMoviePage() {
       });
   }, []);
 
-  return(
-   <>
-<div className="container">
-    <h1>lista post </h1>
-    
-    <ul>
-    {movies.map((movie)=>(
-        <li key={movie.id}>
-            {movie.title}
-           
-            <p>{movie.genre}</p>
-
-            <p>{movie.director}</p>
-        </li>
-        
-        
-    ))}
-    </ul>
-    
-    </div>
-   
-    </>  
-  )
+  return (
+    <>
+      <div className="container px-5 m-5">
+        <h1 className="text-center p-3">I FILM</h1>
+        <div className="row">
+          {movies.map((movie) => (
+            <div className="col-md-4 col-sm-6 col-12 mb-4" key={movie.id}>
+              <div className="card" >
+                <div className="card-body">
+                  <h5 className="card-title">{movie.title}</h5>
+                  <h6 className="card-subtitle mb-2 text-body-secondary">{movie.director}</h6>
+                  <p className="card-text">Genere: {movie.genre}</p>
+                  <p className="card-text">Anno di pubblicazione: {movie.release_year}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
 }
-    
-
-
 
 
 
