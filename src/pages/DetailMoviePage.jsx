@@ -18,17 +18,33 @@ useEffect(() => {
       });
   }, []);
   return (
-    <div className="container">
-      {movie && 
-      <h1>{movie.title}</h1>}
-      {movie && 
-       <p>regista:<strong>{movie.director}</strong></p>}
-      {movie && 
-       <p>genere: <strong>{movie.genre}</strong></p>}
-      {movie && 
-       <p>anno di pubblicazione: <strong>{movie.release_year}</strong></p>}
+    <div className="card m-5 p-3" style={{width: "18rem"}}>
+  <div className="card-body">
+    {movie && <h5 className="card-title">{movie.title}</h5>}
+    {movie && <h6 className="card-subtitle mb-2 text-body-secondary">Regista: <strong>{movie.director}</strong></h6>}
+    { movie && <p className="card-text"> Genere: <strong>{movie.genre}</strong></p>}
+    {movie && <p  className="card-text">Anno di pubblicazione: <strong>{movie.release_year}</strong></p>}
+    <h2>Recensioni</h2>
+    {reviews.length > 0 ? (
+        reviews.map((review, index) => 
+        <p key={index}>
+            <strong>{review.name}</strong>:{review.text}<br/>
+            Rating:<strong>{review.vote}</strong></p> )
+      ) : (
+        <p>No reviews available</p>
+      )}
 
-       <h2>Recensioni</h2>
+
+  </div>
+</div>
+
+
+
+
+
+    
+
+      /* <h2>Recensioni</h2>
       {reviews.length > 0 ? (
         reviews.map((review, index) => 
         <p key={index}>
@@ -36,6 +52,6 @@ useEffect(() => {
       ) : (
         <p>No reviews available</p>
       )}
-    </div>
+    </div>*/
   );
 }
