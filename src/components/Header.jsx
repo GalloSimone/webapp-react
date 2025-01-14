@@ -17,9 +17,6 @@ return(
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/movies">movies </Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/Movies/detail">movie details </Link>
-        </li>
       </ul>
     </div>
   </div>
