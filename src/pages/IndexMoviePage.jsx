@@ -25,6 +25,7 @@ export default function IndexMoviePage() {
                   <h6 className="card-subtitle mb-2 text-body-secondary">{movie.director}</h6>
                   <p className="card-text">Genere: {movie.genre}</p>
                   <p className="card-text">Anno di pubblicazione: {movie.release_year}</p>
+                  <Link to={'/movies/' + movie.id}><button>vedi dettagli</button></Link>
                 </div>
               </div>
             </div>
