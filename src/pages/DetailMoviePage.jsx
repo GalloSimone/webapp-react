@@ -19,10 +19,20 @@ useEffect(() => {
   }, []);
   return (
     <div className="container">
-      <h1>dettaglio film</h1>
-      {movie && <p>{movie.title}</p>}
+      {movie && 
+      <h1>{movie.title}</h1>}
+      {movie && 
+       <p>regista:<strong>{movie.director}</strong></p>}
+      {movie && 
+       <p>genere: <strong>{movie.genre}</strong></p>}
+      {movie && 
+       <p>anno di pubblicazione: <strong>{movie.release_year}</strong></p>}
+
+       <h2>Recensioni</h2>
       {reviews.length > 0 ? (
-        reviews.map((review, index) => <p key={index}>{review.vote}</p>)
+        reviews.map((review, index) => 
+        <p key={index}>
+            <strong>{review.name}</strong>:{review.text}<br/>Rating:{review.vote}</p> )
       ) : (
         <p>No reviews available</p>
       )}
