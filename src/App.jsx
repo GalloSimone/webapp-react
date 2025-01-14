@@ -3,7 +3,7 @@ import {BrowserRouter, Route, RouterProvider, Routes} from "react-router-dom"
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import DefaultLayout from './layouts/DefaultLayout'
-import IndexMoviePage from './pages/IndexMoviePage'
+import IndexMoviePage from "./pages/IndexMoviePage"
 import DetailMoviePage from './pages/DetailMoviePage'
 function App() {
   const [count, setCount] = useState(0)
