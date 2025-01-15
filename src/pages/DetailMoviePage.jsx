@@ -8,6 +8,9 @@ export default function DetailMoviePage(){
     const {id: movieId} = useParams();
 const[movie, setMovie] =useState(null);
 const [reviews, setReviews] =useState([]);
+const updateReviews = (newReviews) => {
+  setReviews(newReviews);
+};
 
 useEffect(() => {
   
@@ -47,7 +50,7 @@ useEffect(() => {
         </button>
         </Link>
         <div className='pt-3'>
-        <CreateReviewsForm/>
+        <CreateReviewsForm updateReviews={updateReviews} movieId={movieId}/>
         </div>
 </div>
   );
